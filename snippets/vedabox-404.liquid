@@ -1,0 +1,97 @@
+<style>
+  .page-404 {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    background: linear-gradient(135deg, #f0f4e8 0%, #faf8f3 60%, #e8eddc 100%);
+  }
+  .page-404 .err-code {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem, 18vw, 10rem);
+    font-weight: 900;
+    color: var(--sage-light, #e8eddc);
+    line-height: 1;
+    margin-bottom: -10px;
+  }
+  .page-404 .err-icon { font-size: 3rem; margin-bottom: 16px; }
+  .page-404 h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: var(--sage-dark, #4a5833);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .page-404 p {
+    font-size: 1rem;
+    color: var(--text-mid, #444);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .page-404 .btn-home {
+    display: inline-block;
+    background: var(--sage, #6b7c4a);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 28px rgba(107,124,74,0.35);
+    transition: all 0.2s;
+    margin-bottom: 16px;
+  }
+  .page-404 .btn-home:hover {
+    background: var(--sage-dark, #4a5833);
+    transform: translateY(-2px);
+  }
+  .page-404 .helpful-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+  .page-404 .helpful-links a {
+    font-size: 0.87rem;
+    color: var(--sage-dark, #4a5833);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  .page-404 .trust-note {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: var(--text-light, #777);
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
+
+<div class="page-404">
+  <div class="err-code">404</div>
+  <div class="err-icon">🌿</div>
+  <h1>This Page Has Gone Back to Nature</h1>
+  <p>The page you were looking for doesn't exist or may have moved. Let's get you back to your natural health journey.</p>
+
+  <a href="{{ routes.root_url }}" class="btn-home">← Back to Home</a>
+
+  <div class="helpful-links">
+    <a href="{{ routes.root_url }}">Home</a>
+    <a href="{{ routes.collections_url }}">Shop All Products</a>
+    <a href="/pages/contact">Contact Us</a>
+  </div>
+
+  <div class="trust-note">
+    <span>🌿 100% Ayurvedic</span>
+    <span>🛡️ 30-Day Guarantee</span>
+    <span>🚚 Free Delivery Above ₹499</span>
+  </div>
+</div>
