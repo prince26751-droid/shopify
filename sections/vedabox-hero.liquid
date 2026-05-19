@@ -1,17 +1,15 @@
 <section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">{{ section.settings.eyebrow }}</div>
-    <h1>{{ section.settings.heading_plain }} <em>{{ section.settings.heading_emphasis }}</em></h1>
-    <p class="hero-sub">{{ section.settings.subheading }}</p>
-    <a href="{{ section.settings.cta_url }}" class="btn-primary">{{ section.settings.cta_text }}</a>
-    <div class="trust-note">{{ section.settings.trust_note }}</div>
-    <div class="trust-bar">
-      <span>{{ section.settings.trust_1 }}</span>
-      <span>{{ section.settings.trust_2 }}</span>
-      <span>{{ section.settings.trust_3 }}</span>
-      <span>{{ section.settings.trust_4 }}</span>
-      <span>{{ section.settings.trust_5 }}</span>
-    </div>
+  <div class="hero-eyebrow">{{ section.settings.eyebrow }}</div>
+  <h1>{{ section.settings.heading_plain }} <em>{{ section.settings.heading_emphasis }}</em></h1>
+  <p class="hero-sub">{{ section.settings.subheading }}</p>
+  <a href="{{ section.settings.cta_url }}" class="cta-primary">{{ section.settings.cta_text }}</a>
+  <span class="cta-note">{{ section.settings.trust_note }}</span>
+  <div class="trust-row">
+    <div class="trust-item">{{ section.settings.trust_1 }}</div>
+    <div class="trust-item">{{ section.settings.trust_2 }}</div>
+    <div class="trust-item">{{ section.settings.trust_3 }}</div>
+    <div class="trust-item">{{ section.settings.trust_4 }}</div>
+    <div class="trust-item">{{ section.settings.trust_5 }}</div>
   </div>
 </section>
 

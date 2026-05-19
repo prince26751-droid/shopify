@@ -1,16 +1,15 @@
 <section class="video-section">
   <div class="section-label">{{ section.settings.section_label }}</div>
-  <h2>{{ section.settings.title }}</h2>
+  <h2 class="section-title">{{ section.settings.title }}</h2>
   <p class="section-sub">{{ section.settings.subtitle }}</p>
-  <div class="video-wrapper">
-    <div class="video-placeholder">
-      <div class="play-btn">▶</div>
-      <div class="video-caption">{{ section.settings.video_caption }}</div>
-    </div>
+  <div class="video-placeholder">
+    <div class="play-btn">▶</div>
+    <div class="video-caption">{{ section.settings.video_caption }}</div>
   </div>
   {% if section.settings.show_script_notes and section.settings.script_notes != blank %}
-  <div class="script-notes">
-    <p>{{ section.settings.script_notes }}</p>
+  <div class="video-script">
+    <strong>Script Notes / Talking Points:</strong>
+    {{ section.settings.script_notes }}
   </div>
   {% endif %}
 </section>

@@ -1,17 +1,15 @@
-<section class="faq-section">
-  <div class="section-label">{{ section.settings.section_label }}</div>
-  <h2>{{ section.settings.title }}</h2>
-  <div class="faq-list">
+<section class="faq">
+  <div class="faq-inner">
+    <div class="section-label">{{ section.settings.section_label }}</div>
+    <h2 class="section-title">{{ section.settings.title }}</h2>
     {% for block in section.blocks %}
       {% if block.type == 'faq_item' %}
         <div class="faq-item" {{ block.shopify_attributes }}>
-          <button class="faq-question" aria-expanded="false">
+          <div class="faq-q">
             {{ block.settings.question }}
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>{{ block.settings.answer }}</p>
+            <span>+</span>
           </div>
+          <div class="faq-a">{{ block.settings.answer }}</div>
         </div>
       {% endif %}
     {% endfor %}

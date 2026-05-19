@@ -1,31 +1,31 @@
-<section class="benefits-section">
+<section class="benefits">
   <div class="section-label">{{ section.settings.section_label }}</div>
-  <h2>{{ section.settings.title }}</h2>
-  <p class="section-sub">{{ section.settings.subtitle }}</p>
+  <h2 class="section-title" style="text-align:center;">{{ section.settings.title }}</h2>
+  <p class="section-sub" style="text-align:center; max-width:640px; margin:12px auto 0;">{{ section.settings.subtitle }}</p>
   <div class="benefits-grid">
-    <div class="benefits-col">
-      <h3>{{ section.settings.gain_col_title }}</h3>
+    <div class="benefit-col gain">
+      <div class="col-title">{{ section.settings.gain_col_title }}</div>
       {% for block in section.blocks %}
         {% if block.type == 'gain_item' %}
           <div class="benefit-item" {{ block.shopify_attributes }}>
-            <div class="benefit-icon">{{ block.settings.icon }}</div>
-            <div class="benefit-text">
+            <div class="b-icon">{{ block.settings.icon }}</div>
+            <div class="b-text">
               <strong>{{ block.settings.heading }}</strong>
-              <p>{{ block.settings.description }}</p>
+              <span>{{ block.settings.description }}</span>
             </div>
           </div>
         {% endif %}
       {% endfor %}
     </div>
-    <div class="benefits-col">
-      <h3>{{ section.settings.pain_col_title }}</h3>
+    <div class="benefit-col pain">
+      <div class="col-title">{{ section.settings.pain_col_title }}</div>
       {% for block in section.blocks %}
         {% if block.type == 'pain_item' %}
           <div class="benefit-item" {{ block.shopify_attributes }}>
-            <div class="benefit-icon">{{ block.settings.icon }}</div>
-            <div class="benefit-text">
+            <div class="b-icon">{{ block.settings.icon }}</div>
+            <div class="b-text">
               <strong>{{ block.settings.heading }}</strong>
-              <p>{{ block.settings.description }}</p>
+              <span>{{ block.settings.description }}</span>
             </div>
           </div>
         {% endif %}

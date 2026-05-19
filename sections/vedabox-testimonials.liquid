@@ -1,21 +1,21 @@
-<section class="testimonials-section">
+<section class="testimonials">
   <div class="section-label">{{ section.settings.section_label }}</div>
-  <h2>{{ section.settings.title }}</h2>
+  <h2 class="section-title">{{ section.settings.title }}</h2>
   <p class="section-sub">{{ section.settings.subtitle }}</p>
-  <div class="testimonials-grid">
+  <div class="testi-grid">
     {% for block in section.blocks %}
       {% if block.type == 'testimonial' %}
-        <div class="testimonial-card" {{ block.shopify_attributes }}>
-          <div class="testimonial-stars">
+        <div class="testi-card" {{ block.shopify_attributes }}>
+          <div class="stars">
             {% assign star_count = block.settings.stars %}
-            {% for i in (1..star_count) %}⭐{% endfor %}
+            {% for i in (1..star_count) %}★{% endfor %}
           </div>
-          <p class="testimonial-text">{{ block.settings.text }}</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">{{ block.settings.initials }}</div>
-            <div>
+          <p class="testi-text">"{{ block.settings.text }}"</p>
+          <div class="testi-author">
+            <div class="author-avatar">{{ block.settings.initials }}</div>
+            <div class="author-info">
               <strong>{{ block.settings.name }}</strong>
-              <span class="testimonial-location">{{ block.settings.location }}</span>
+              <span>{{ block.settings.location }}</span>
             </div>
           </div>
         </div>

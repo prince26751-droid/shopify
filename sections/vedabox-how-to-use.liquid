@@ -1,13 +1,13 @@
-<section class="how-to-use">
+<section class="how-to">
   <div class="section-label">{{ section.settings.section_label }}</div>
-  <h2>{{ section.settings.title }}</h2>
-  <div class="steps-grid">
+  <h2 class="section-title">{{ section.settings.title }}</h2>
+  <div class="steps-row">
     {% for block in section.blocks %}
       {% if block.type == 'step' %}
-        <div class="step-card" {{ block.shopify_attributes }}>
+        <div class="step" {{ block.shopify_attributes }}>
           <div class="step-num">{{ forloop.index }}</div>
-          <h3>{{ block.settings.heading }}</h3>
-          <p>{{ block.settings.description }}</p>
+          <strong>{{ block.settings.heading }}</strong>
+          <span>{{ block.settings.description }}</span>
         </div>
       {% endif %}
     {% endfor %}

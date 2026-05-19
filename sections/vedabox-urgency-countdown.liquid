@@ -1,28 +1,28 @@
-<section class="urgency-countdown">
+<section class="urgency-section">
   <div class="section-label">{{ section.settings.section_label }}</div>
-  <h2>{{ section.settings.title }}</h2>
+  <h2 class="section-title">{{ section.settings.title }}</h2>
   <div class="countdown-box"
     data-days="{{ section.settings.countdown_days }}"
     data-hours="{{ section.settings.countdown_hours }}"
     data-mins="{{ section.settings.countdown_mins }}">
-    <div class="countdown-unit">
-      <span class="countdown-num" id="cd-days">{{ section.settings.countdown_days }}</span>
-      <span class="countdown-label">Days</span>
+    <div class="count-unit">
+      <span class="count-num" id="days">{{ section.settings.countdown_days }}</span>
+      <span class="count-label">Days</span>
     </div>
     <div class="countdown-sep">:</div>
-    <div class="countdown-unit">
-      <span class="countdown-num" id="cd-hours">{{ section.settings.countdown_hours }}</span>
-      <span class="countdown-label">Hours</span>
+    <div class="count-unit">
+      <span class="count-num" id="hours">{{ section.settings.countdown_hours }}</span>
+      <span class="count-label">Hours</span>
     </div>
     <div class="countdown-sep">:</div>
-    <div class="countdown-unit">
-      <span class="countdown-num" id="cd-mins">{{ section.settings.countdown_mins }}</span>
-      <span class="countdown-label">Minutes</span>
+    <div class="count-unit">
+      <span class="count-num" id="mins">{{ section.settings.countdown_mins }}</span>
+      <span class="count-label">Minutes</span>
     </div>
     <div class="countdown-sep">:</div>
-    <div class="countdown-unit">
-      <span class="countdown-num" id="cd-secs">00</span>
-      <span class="countdown-label">Seconds</span>
+    <div class="count-unit">
+      <span class="count-num" id="secs">00</span>
+      <span class="count-label">Seconds</span>
     </div>
   </div>
   <p>{{ section.settings.body_text }}</p>

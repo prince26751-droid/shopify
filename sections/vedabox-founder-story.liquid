@@ -1,21 +1,21 @@
-<section class="founder-story">
+<section class="story">
   <div class="section-label">{{ section.settings.section_label }}</div>
-  <div class="founder-inner">
-    <div class="founder-text">
-      <h2>{{ section.settings.title }}</h2>
+  <div class="story-inner">
+    <div class="founder-photo">
+      {% if section.settings.founder_photo != blank %}
+        <img src="{{ section.settings.founder_photo | image_url: width: 400 }}" alt="Founder Photo">
+      {% else %}
+        <p>{{ section.settings.founder_photo_placeholder }}</p>
+      {% endif %}
+    </div>
+    <div class="story-content">
+      <h2 class="section-title">{{ section.settings.title }}</h2>
       <blockquote>{{ section.settings.quote }}</blockquote>
       <p>{{ section.settings.paragraph_1 }}</p>
       <p>{{ section.settings.paragraph_2 }}</p>
       <p>{{ section.settings.paragraph_3 }}</p>
       <p>{{ section.settings.paragraph_4 }}</p>
-      <p class="founder-sig">{{ section.settings.founder_name }}</p>
-    </div>
-    <div class="founder-photo-wrap">
-      {% if section.settings.founder_photo != blank %}
-        <img src="{{ section.settings.founder_photo | image_url: width: 400 }}" alt="Founder Photo" class="founder-photo">
-      {% else %}
-        <div class="founder-photo-placeholder">{{ section.settings.founder_photo_placeholder }}</div>
-      {% endif %}
+      <p class="founder-name">{{ section.settings.founder_name }}</p>
     </div>
   </div>
 </section>

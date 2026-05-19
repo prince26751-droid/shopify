@@ -1,37 +1,33 @@
-<section class="pricing-section" id="order">
+<section class="pricing" id="order">
   <div class="section-label">{{ section.settings.section_label }}</div>
-  <h2>{{ section.settings.title }}</h2>
+  <h2 class="section-title">{{ section.settings.title }}</h2>
   <p class="section-sub">{{ section.settings.subtitle }}</p>
   <div class="pricing-grid">
-    <div class="pricing-card">
-      <h3>{{ section.settings.single_name }}</h3>
-      <p class="pricing-desc">{{ section.settings.single_desc }}</p>
-      <div class="pricing-price">
-        <span class="price-current">{{ section.settings.single_price }}</span>
-        <span class="price-original">{{ section.settings.single_original_price }}</span>
-      </div>
-      <p class="price-per-unit">{{ section.settings.single_per_unit }}</p>
-      <a href="{{ section.settings.single_product_url }}" class="btn-secondary">{{ section.settings.single_cta }}</a>
+    <div class="price-card">
+      <div class="plan-name">{{ section.settings.single_name }}</div>
+      <div class="plan-desc">{{ section.settings.single_desc }}</div>
+      <div class="plan-price">{{ section.settings.single_price }} <sub>{{ section.settings.single_original_price }}</sub></div>
+      <div class="per-unit">{{ section.settings.single_per_unit }}</div>
+      <a href="{{ section.settings.single_product_url }}" class="plan-cta outline">{{ section.settings.single_cta }}</a>
     </div>
-    <div class="pricing-card pricing-card--featured">
-      <div class="pricing-badge">{{ section.settings.bundle_badge }}</div>
-      <h3>{{ section.settings.bundle_name }}</h3>
-      <p class="pricing-desc">{{ section.settings.bundle_desc }}</p>
-      <div class="pricing-price">
-        <span class="price-current">{{ section.settings.bundle_price }}</span>
-        <span class="price-original">{{ section.settings.bundle_original_price }}</span>
-      </div>
-      <p class="price-per-unit">{{ section.settings.bundle_per_unit }}</p>
-      <p class="price-savings">{{ section.settings.bundle_savings }}</p>
-      <a href="{{ section.settings.bundle_product_url }}" class="btn-primary">{{ section.settings.bundle_cta }}</a>
+    <div class="price-card featured">
+      <div class="badge">{{ section.settings.bundle_badge }}</div>
+      <div class="plan-name">{{ section.settings.bundle_name }}</div>
+      <div class="plan-desc">{{ section.settings.bundle_desc }}</div>
+      <div class="plan-price">{{ section.settings.bundle_price }} <sub>{{ section.settings.bundle_original_price }}</sub></div>
+      <div class="per-unit">{{ section.settings.bundle_per_unit }}</div>
+      <div class="plan-savings">{{ section.settings.bundle_savings }}</div>
+      <a href="{{ section.settings.bundle_product_url }}" class="plan-cta filled">{{ section.settings.bundle_cta }}</a>
     </div>
   </div>
-  <div class="guarantee-box">
-    <p>{{ section.settings.guarantee_text }}</p>
+  <div class="guarantee">
+    <div class="g-icon">🛡️</div>
+    <div>
+      <strong>30-Day Money-Back Guarantee</strong>
+      <span>{{ section.settings.guarantee_text }}</span>
+    </div>
   </div>
-  <div class="disclaimer">
-    <p>{{ section.settings.disclaimer }}</p>
-  </div>
+  <div class="disclaimer">{{ section.settings.disclaimer }}</div>
 </section>
 
 {% schema %}

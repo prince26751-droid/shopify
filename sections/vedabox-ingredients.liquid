@@ -1,14 +1,14 @@
-<section class="ingredients-section">
+<section class="ingredients">
   <div class="section-label">{{ section.settings.section_label }}</div>
-  <h2>{{ section.settings.title }}</h2>
+  <h2 class="section-title">{{ section.settings.title }}</h2>
   <p class="section-sub">{{ section.settings.subtitle }}</p>
-  <div class="ingredients-grid">
+  <div class="herb-grid">
     {% for block in section.blocks %}
       {% if block.type == 'herb' %}
         <div class="herb-card" {{ block.shopify_attributes }}>
           <div class="herb-icon">{{ block.settings.icon }}</div>
-          <div class="herb-name">{{ block.settings.name }}</div>
-          <div class="herb-benefit">{{ block.settings.benefit }}</div>
+          <strong>{{ block.settings.name }}</strong>
+          <span>{{ block.settings.benefit }}</span>
         </div>
       {% endif %}
     {% endfor %}
