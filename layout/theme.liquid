@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}{% if page_title != shop.name %} – {{ shop.name }}{% endif %}</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  {{ content_for_header }}
+
+  <!-- Theme CSS -->
+  {{ 'vedabox.css' | asset_url | stylesheet_tag }}
+
+  <!-- Dynamic CSS custom properties from theme settings -->
+  <style>
+    :root {
+      --sage: {{ settings.color_sage }};
+      --sage-dark: {{ settings.color_sage_dark }};
+      --sage-light: {{ settings.color_sage_light }};
+      --cream: {{ settings.color_cream }};
+      --gold: {{ settings.color_gold }};
+      --text-dark: {{ settings.color_text_dark }};
+      --text-mid: {{ settings.color_text_mid }};
+      --text-light: {{ settings.color_text_light }};
+      --border: {{ settings.color_border }};
+    }
+  </style>
+</head>
+<body>
+  {{ content_for_layout }}
+
+  {{ 'vedabox.js' | asset_url | script_tag }}
+</body>
+</html>

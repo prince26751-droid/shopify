@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "urgency_banner": { "type": "vedabox-urgency-banner" },
+    "header": { "type": "vedabox-header" },
+    "hero": { "type": "vedabox-hero" },
+    "video": { "type": "vedabox-video" },
+    "benefits": { "type": "vedabox-benefits" },
+    "cta_strip_1": { "type": "vedabox-cta-strip" },
+    "founder_story": { "type": "vedabox-founder-story" },
+    "urgency_countdown": { "type": "vedabox-urgency-countdown" },
+    "ingredients": { "type": "vedabox-ingredients" },
+    "how_to_use": { "type": "vedabox-how-to-use" },
+    "testimonials": { "type": "vedabox-testimonials" },
+    "pricing": { "type": "vedabox-pricing" },
+    "checkout": { "type": "vedabox-checkout" },
+    "final_cta": { "type": "vedabox-final-cta" },
+    "faq": { "type": "vedabox-faq" },
+    "footer": { "type": "vedabox-footer" }
+  },
+  "order": [
+    "urgency_banner",
+    "header",
+    "hero",
+    "video",
+    "benefits",
+    "cta_strip_1",
+    "founder_story",
+    "urgency_countdown",
+    "ingredients",
+    "how_to_use",
+    "testimonials",
+    "pricing",
+    "checkout",
+    "final_cta",
+    "faq",
+    "footer"
+  ]
+}

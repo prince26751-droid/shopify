@@ -1,0 +1,93 @@
+<section class="founder-story">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <div class="founder-inner">
+    <div class="founder-text">
+      <h2>{{ section.settings.title }}</h2>
+      <blockquote>{{ section.settings.quote }}</blockquote>
+      <p>{{ section.settings.paragraph_1 }}</p>
+      <p>{{ section.settings.paragraph_2 }}</p>
+      <p>{{ section.settings.paragraph_3 }}</p>
+      <p>{{ section.settings.paragraph_4 }}</p>
+      <p class="founder-sig">{{ section.settings.founder_name }}</p>
+    </div>
+    <div class="founder-photo-wrap">
+      {% if section.settings.founder_photo != blank %}
+        <img src="{{ section.settings.founder_photo | image_url: width: 400 }}" alt="Founder Photo" class="founder-photo">
+      {% else %}
+        <div class="founder-photo-placeholder">{{ section.settings.founder_photo_placeholder }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Founder Story",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "The Story Behind VedaBox"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "I Watched My Grandmother Suffer — And I Refused to Accept That Was the Only Way."
+    },
+    {
+      "type": "text",
+      "id": "quote",
+      "label": "Pull Quote",
+      "default": "Her sugar was 'controlled' — but the medicines were quietly destroying everything else."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_1",
+      "label": "Paragraph 1",
+      "default": "My grandmother was diagnosed with Type 2 diabetes when I was twelve. For the next fifteen years, I watched her faithfully take her medications — and I watched those medications slowly take their toll. Her kidneys weakened. Her appetite disappeared. She spent more time managing side effects than living her life."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_2",
+      "label": "Paragraph 2",
+      "default": "When I started my PhD in Ayurvedic pharmacology, I began to understand what she had been going through. The modern pharmaceutical approach to blood sugar management focuses on suppressing symptoms — not supporting the body's ability to regulate itself. I knew there had to be a better way."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_3",
+      "label": "Paragraph 3",
+      "default": "I spent three years reviewing clinical studies on Ayurvedic herbs with documented effects on blood glucose, insulin sensitivity, and metabolic health. I formulated, tested, and refined until I had something I was genuinely proud of. VedaBox Diabetic Care is the result — a formula I wish my grandmother could have had."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_4",
+      "label": "Paragraph 4",
+      "default": "I'm not asking you to abandon your doctor's advice. I'm asking you to consider that your body has extraordinary capacity to heal and regulate itself — and that the right herbs, at the right doses, can support that process. That's what VedaBox is built to do."
+    },
+    {
+      "type": "text",
+      "id": "founder_name",
+      "label": "Founder Signature",
+      "default": "— Founder, VedaBox · vedabox.in"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_photo",
+      "label": "Founder Photo"
+    },
+    {
+      "type": "textarea",
+      "id": "founder_photo_placeholder",
+      "label": "Placeholder Text (if no photo)",
+      "default": "Add Founder\nPhoto Here"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder Story"
+    }
+  ]
+}
+{% endschema %}

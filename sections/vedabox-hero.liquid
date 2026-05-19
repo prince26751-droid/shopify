@@ -1,0 +1,101 @@
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">{{ section.settings.eyebrow }}</div>
+    <h1>{{ section.settings.heading_plain }} <em>{{ section.settings.heading_emphasis }}</em></h1>
+    <p class="hero-sub">{{ section.settings.subheading }}</p>
+    <a href="{{ section.settings.cta_url }}" class="btn-primary">{{ section.settings.cta_text }}</a>
+    <div class="trust-note">{{ section.settings.trust_note }}</div>
+    <div class="trust-bar">
+      <span>{{ section.settings.trust_1 }}</span>
+      <span>{{ section.settings.trust_2 }}</span>
+      <span>{{ section.settings.trust_3 }}</span>
+      <span>{{ section.settings.trust_4 }}</span>
+      <span>{{ section.settings.trust_5 }}</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "🌿 100% Ayurvedic · 17 Clinically-Studied Herbs"
+    },
+    {
+      "type": "text",
+      "id": "heading_plain",
+      "label": "Heading (plain part)",
+      "default": "Finally Manage Your Blood Sugar Naturally —"
+    },
+    {
+      "type": "text",
+      "id": "heading_emphasis",
+      "label": "Heading (emphasis part)",
+      "default": "Without Relying on Harsh Chemicals for the Rest of Your Life"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "VedaBox Diabetic Care combines 17 time-tested Ayurvedic herbs to help regulate glucose levels, improve insulin sensitivity, and protect your liver and kidneys — so you can live fully, not just cope."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Yes! I Want to Manage My Sugar Naturally →"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button URL",
+      "default": "#order"
+    },
+    {
+      "type": "text",
+      "id": "trust_note",
+      "label": "Trust Note",
+      "default": "⭐⭐⭐⭐⭐ Trusted by 2,000+ customers across India · Free Delivery Above ₹499"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust Item 1",
+      "default": "✅ No Harsh Chemicals"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust Item 2",
+      "default": "🌿 100% Ayurvedic"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust Item 3",
+      "default": "🔬 PhD-Formulated"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Trust Item 4",
+      "default": "🛡️ 30-Day Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "trust_5",
+      "label": "Trust Item 5",
+      "default": "🚚 Pan-India Delivery"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner"
+    }
+  ]
+}
+{% endschema %}

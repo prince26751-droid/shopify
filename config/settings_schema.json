@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Brand Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_sage",
+        "label": "Primary (Sage Green)",
+        "default": "#6b7c4a"
+      },
+      {
+        "type": "color",
+        "id": "color_sage_dark",
+        "label": "Primary Dark",
+        "default": "#4a5833"
+      },
+      {
+        "type": "color",
+        "id": "color_sage_light",
+        "label": "Primary Light",
+        "default": "#e8eddc"
+      },
+      {
+        "type": "color",
+        "id": "color_cream",
+        "label": "Background Cream",
+        "default": "#faf8f3"
+      },
+      {
+        "type": "color",
+        "id": "color_gold",
+        "label": "Accent Gold",
+        "default": "#c9a84c"
+      },
+      {
+        "type": "color",
+        "id": "color_text_dark",
+        "label": "Text Dark",
+        "default": "#1a1a1a"
+      },
+      {
+        "type": "color",
+        "id": "color_text_mid",
+        "label": "Text Medium",
+        "default": "#444444"
+      },
+      {
+        "type": "color",
+        "id": "color_text_light",
+        "label": "Text Light",
+        "default": "#777777"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Border Color",
+        "default": "#d6dcc8"
+      }
+    ]
+  },
+  {
+    "name": "Brand Identity",
+    "settings": [
+      {
+        "type": "text",
+        "id": "brand_name_part1",
+        "label": "Brand Name Part 1",
+        "default": "Veda"
+      },
+      {
+        "type": "text",
+        "id": "brand_name_part2",
+        "label": "Brand Name Part 2 (highlighted)",
+        "default": "Box"
+      },
+      {
+        "type": "text",
+        "id": "support_email",
+        "label": "Support Email",
+        "default": "info@ashabgroup.in"
+      },
+      {
+        "type": "text",
+        "id": "company_address",
+        "label": "Company Address",
+        "default": "#21 Aman Avenue, Majitha Road, Amritsar, Punjab 143001"
+      },
+      {
+        "type": "text",
+        "id": "website_url",
+        "label": "Website URL",
+        "default": "vedabox.in"
+      }
+    ]
+  }
+]

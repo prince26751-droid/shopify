@@ -1,0 +1,33 @@
+<footer>
+  <p style="margin-bottom:8px;">
+    <strong>{{ settings.brand_name_part1 }}{{ settings.brand_name_part2 }}</strong>
+    {%- if section.settings.footer_text != blank %} — {{ section.settings.footer_text }}{% endif %},
+    {{ settings.company_address }}
+  </p>
+  <p style="margin-bottom:8px;">
+    📧 {{ settings.support_email }} · 🌐
+    <a href="https://{{ settings.website_url }}">{{ settings.website_url }}</a>
+  </p>
+  <p>
+    © {{ section.settings.copyright_year }} {{ settings.brand_name_part1 }}{{ settings.brand_name_part2 }} ·
+    <a href="{{ section.settings.privacy_url }}">Privacy Policy</a> ·
+    <a href="{{ section.settings.refund_url }}">Refund Policy</a> ·
+    <a href="{{ section.settings.shipping_url }}">Shipping Policy</a>
+  </p>
+  <p style="margin-top:12px; font-size:0.7rem; opacity:0.5;">{{ section.settings.legal_note }}</p>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text", "id": "footer_text", "label": "Marketed By", "default": "Marketed by Ashab Group" },
+    { "type": "text", "id": "copyright_year", "label": "Copyright Year", "default": "2025" },
+    { "type": "url", "id": "privacy_url", "label": "Privacy Policy URL" },
+    { "type": "url", "id": "refund_url", "label": "Refund Policy URL" },
+    { "type": "url", "id": "shipping_url", "label": "Shipping Policy URL" },
+    { "type": "textarea", "id": "legal_note", "label": "Legal Disclaimer", "default": "*These statements have not been evaluated by any food/drug authority. This product is not intended to diagnose, treat, cure or prevent any disease. Testimonials marked as illustrative should be replaced with verified reviews before publishing." }
+  ],
+  "presets": [{ "name": "Footer" }]
+}
+{% endschema %}

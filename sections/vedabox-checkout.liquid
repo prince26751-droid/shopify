@@ -1,0 +1,232 @@
+<section class="checkout-section" id="checkout">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <p class="section-sub">{{ section.settings.subtitle }}</p>
+
+  <div class="checkout-wrapper">
+    <!-- Step 1: Pack Selection -->
+    <div class="checkout-step" id="step-1">
+      <h3>Step 1: Choose Your Pack</h3>
+      <div class="pack-options">
+        <label class="pack-option">
+          <input type="radio" name="pack" value="1" checked>
+          <span class="pack-label">
+            <strong>{{ section.settings.pack1_name }}</strong>
+            <span class="pack-price">{{ section.settings.pack1_price }}</span>
+            <span class="pack-tag">{{ section.settings.pack1_label }}</span>
+          </span>
+        </label>
+        <label class="pack-option pack-option--featured">
+          <input type="radio" name="pack" value="3">
+          <span class="pack-label">
+            <strong>{{ section.settings.pack3_name }}</strong>
+            <span class="pack-price">{{ section.settings.pack3_price }}</span>
+            <span class="pack-tag">{{ section.settings.pack3_label }}</span>
+          </span>
+        </label>
+      </div>
+      <button class="btn-primary" onclick="document.getElementById('step-2').style.display='block'; this.closest('#step-1').querySelector('button').style.display='none';">
+        Continue to Details →
+      </button>
+    </div>
+
+    <!-- Step 2: Customer Details -->
+    <div class="checkout-step" id="step-2" style="display:none;">
+      <h3>Step 2: Your Details</h3>
+      <form class="checkout-form" id="checkout-form">
+        <div class="form-row">
+          <label>Full Name *</label>
+          <input type="text" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-row">
+          <label>Phone Number *</label>
+          <input type="tel" name="phone" placeholder="10-digit mobile number" required>
+        </div>
+        <div class="form-row">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="your@email.com">
+        </div>
+        <div class="form-row">
+          <label>Delivery Address *</label>
+          <textarea name="address" placeholder="House/flat number, street, area" required></textarea>
+        </div>
+        <div class="form-row-group">
+          <div class="form-row">
+            <label>City *</label>
+            <input type="text" name="city" placeholder="City" required>
+          </div>
+          <div class="form-row">
+            <label>PIN Code *</label>
+            <input type="text" name="pin" placeholder="6-digit PIN" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>State *</label>
+          <input type="text" name="state" placeholder="State" required>
+        </div>
+
+        <!-- Upsell -->
+        <div class="checkout-upsell">
+          <h4>{{ section.settings.upsell_heading }}</h4>
+          <p>{{ section.settings.upsell_body }}</p>
+          <div class="upsell-pricing">
+            <span class="upsell-price-new">{{ section.settings.upsell_new_price }}</span>
+            <span class="upsell-price-old">{{ section.settings.upsell_old_price }}</span>
+            <span class="upsell-savings-badge">{{ section.settings.upsell_savings }}</span>
+          </div>
+          <label class="upsell-check">
+            <input type="checkbox" name="upsell"> Yes, add the 6-month bundle and save ₹500
+          </label>
+        </div>
+
+        <!-- Cross-sell -->
+        <div class="checkout-crosssell">
+          <h4>{{ section.settings.cross_sell_heading }}</h4>
+          <p>{{ section.settings.cross_sell_body }}</p>
+          <label class="upsell-check">
+            <input type="checkbox" name="crosssell"> Add VedaBox Liver Care to my order
+          </label>
+        </div>
+
+        <div class="form-terms">
+          <label>
+            <input type="checkbox" name="terms" required>
+            I agree to the <a href="{{ section.settings.terms_url }}" target="_blank">Terms of Service</a>
+            and <a href="{{ section.settings.refund_url }}" target="_blank">Refund Policy</a>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-primary btn-checkout">
+          Place My Order — Pay on Delivery
+        </button>
+      </form>
+    </div>
+
+    <!-- Thank You -->
+    <div class="checkout-step checkout-thankyou" id="step-thankyou" style="display:none;">
+      <h3>🎉 Order Placed Successfully!</h3>
+      <p>Thank you for ordering VedaBox Diabetic Care. We'll call you within 24 hours to confirm your order. Delivery within 5–7 business days.</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Checkout",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "Secure Checkout"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "You're One Step Away From Natural Blood Sugar Support"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Safe, encrypted checkout. Your order ships within 24 hours."
+    },
+    {
+      "type": "text",
+      "id": "pack1_name",
+      "label": "Pack 1 Name",
+      "default": "1 Bottle"
+    },
+    {
+      "type": "text",
+      "id": "pack1_price",
+      "label": "Pack 1 Price",
+      "default": "₹500"
+    },
+    {
+      "type": "text",
+      "id": "pack1_label",
+      "label": "Pack 1 Label",
+      "default": "30-Day Supply"
+    },
+    {
+      "type": "text",
+      "id": "pack3_name",
+      "label": "Pack 3 Name",
+      "default": "3 Bottles ⭐"
+    },
+    {
+      "type": "text",
+      "id": "pack3_price",
+      "label": "Pack 3 Price",
+      "default": "₹1,350"
+    },
+    {
+      "type": "text",
+      "id": "pack3_label",
+      "label": "Pack 3 Label",
+      "default": "Save ₹150!"
+    },
+    {
+      "type": "url",
+      "id": "terms_url",
+      "label": "Terms of Service URL",
+      "default": "https://vedabox.in/policies/terms-of-service"
+    },
+    {
+      "type": "url",
+      "id": "refund_url",
+      "label": "Refund Policy URL",
+      "default": "https://vedabox.in/policies/refund-policy"
+    },
+    {
+      "type": "text",
+      "id": "upsell_heading",
+      "label": "Upsell Heading",
+      "default": "Upgrade to Our 6-Month \"Complete Care\" Bundle & Save ₹500"
+    },
+    {
+      "type": "textarea",
+      "id": "upsell_body",
+      "label": "Upsell Body",
+      "default": "Get 6 bottles (180-day supply) of VedaBox Diabetic Care at our best-ever price. Lock in maximum savings and give your body the full course it needs to make lasting change."
+    },
+    {
+      "type": "text",
+      "id": "upsell_new_price",
+      "label": "Upsell New Price",
+      "default": "₹2,500"
+    },
+    {
+      "type": "text",
+      "id": "upsell_old_price",
+      "label": "Upsell Old Price",
+      "default": "₹3,000"
+    },
+    {
+      "type": "text",
+      "id": "upsell_savings",
+      "label": "Upsell Savings Badge",
+      "default": "Save ₹500"
+    },
+    {
+      "type": "text",
+      "id": "cross_sell_heading",
+      "label": "Cross-Sell Heading",
+      "default": "Also Loved: VedaBox Liver Care Capsules"
+    },
+    {
+      "type": "textarea",
+      "id": "cross_sell_body",
+      "label": "Cross-Sell Body",
+      "default": "Diabetes puts extra strain on your liver. Our Liver Care formula uses 9 Ayurvedic herbs to support detoxification, protect liver cells, and improve fat metabolism. Add it for ₹450 (regular price ₹600)."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Checkout"
+    }
+  ]
+}
+{% endschema %}

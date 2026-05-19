@@ -1,0 +1,194 @@
+<section class="benefits-section">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <p class="section-sub">{{ section.settings.subtitle }}</p>
+  <div class="benefits-grid">
+    <div class="benefits-col">
+      <h3>{{ section.settings.gain_col_title }}</h3>
+      {% for block in section.blocks %}
+        {% if block.type == 'gain_item' %}
+          <div class="benefit-item" {{ block.shopify_attributes }}>
+            <div class="benefit-icon">{{ block.settings.icon }}</div>
+            <div class="benefit-text">
+              <strong>{{ block.settings.heading }}</strong>
+              <p>{{ block.settings.description }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="benefits-col">
+      <h3>{{ section.settings.pain_col_title }}</h3>
+      {% for block in section.blocks %}
+        {% if block.type == 'pain_item' %}
+          <div class="benefit-item" {{ block.shopify_attributes }}>
+            <div class="benefit-icon">{{ block.settings.icon }}</div>
+            <div class="benefit-text">
+              <strong>{{ block.settings.heading }}</strong>
+              <p>{{ block.settings.description }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "Why VedaBox Works"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What You Gain — And What You No Longer Have to Worry About"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "This isn't about masking the problem. VedaBox Diabetic Care works with your body's natural systems to restore balance — the way Ayurveda has done for thousands of years."
+    },
+    {
+      "type": "text",
+      "id": "gain_col_title",
+      "label": "Gain Column Title",
+      "default": "🌱 What You Gain"
+    },
+    {
+      "type": "text",
+      "id": "pain_col_title",
+      "label": "Pain Column Title",
+      "default": "🛡️ What You No Longer Have to Fear"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gain_item",
+      "name": "Gain Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "🌿"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Steadier Blood Sugar Levels"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Feel fewer spikes and crashes throughout the day."
+        }
+      ]
+    },
+    {
+      "type": "pain_item",
+      "name": "Pain/Objection Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "🛡️"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "No More Fear of Side Effects"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "100% natural herbs with no harmful additives or synthetic compounds."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits Section",
+      "blocks": [
+        {
+          "type": "gain_item",
+          "settings": {
+            "icon": "📉",
+            "heading": "Steadier Blood Sugar Levels",
+            "description": "Herbs like Karela, Jamun Seed, and Gurmar work together to help blunt glucose spikes after meals — so you feel more even-keeled throughout the day."
+          }
+        },
+        {
+          "type": "gain_item",
+          "settings": {
+            "icon": "⚡",
+            "heading": "More Energy, Less Fatigue",
+            "description": "When your glucose is better regulated, your cells get consistent fuel. Many customers report feeling noticeably less tired within 2–3 weeks."
+          }
+        },
+        {
+          "type": "gain_item",
+          "settings": {
+            "icon": "🧠",
+            "heading": "Sharper Mental Clarity",
+            "description": "Stable blood sugar means a steadier supply of glucose to the brain — fewer brain-fog moments, better focus, calmer mood."
+          }
+        },
+        {
+          "type": "gain_item",
+          "settings": {
+            "icon": "🫀",
+            "heading": "Kidney & Liver Protection",
+            "description": "Punarnava and Bhumi Amla actively support liver detox and kidney function — organs that quietly suffer most in poorly managed diabetes."
+          }
+        },
+        {
+          "type": "pain_item",
+          "settings": {
+            "icon": "💊",
+            "heading": "Drug Side Effects",
+            "description": "Metformin and sulfonylureas can cause nausea, hypoglycemia, and long-term organ stress. VedaBox is 100% plant-based with no synthetic compounds."
+          }
+        },
+        {
+          "type": "pain_item",
+          "settings": {
+            "icon": "📈",
+            "heading": "Escalating Dosages",
+            "description": "Many diabetes medications require higher and higher doses over time. Ayurvedic herbs work with your body's systems rather than overriding them."
+          }
+        },
+        {
+          "type": "pain_item",
+          "settings": {
+            "icon": "😰",
+            "heading": "Blood Sugar Anxiety",
+            "description": "The constant worry about what you ate, whether your numbers are up — VedaBox customers consistently report feeling more in control and less anxious."
+          }
+        },
+        {
+          "type": "pain_item",
+          "settings": {
+            "icon": "🏥",
+            "heading": "Long-Term Complications",
+            "description": "Poorly managed blood sugar damages nerves, eyes, kidneys, and heart over time. Our formula includes herbs specifically chosen for their protective, anti-glycation properties."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,174 @@
+<section class="pricing-section" id="order">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <p class="section-sub">{{ section.settings.subtitle }}</p>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>{{ section.settings.single_name }}</h3>
+      <p class="pricing-desc">{{ section.settings.single_desc }}</p>
+      <div class="pricing-price">
+        <span class="price-current">{{ section.settings.single_price }}</span>
+        <span class="price-original">{{ section.settings.single_original_price }}</span>
+      </div>
+      <p class="price-per-unit">{{ section.settings.single_per_unit }}</p>
+      <a href="{{ section.settings.single_product_url }}" class="btn-secondary">{{ section.settings.single_cta }}</a>
+    </div>
+    <div class="pricing-card pricing-card--featured">
+      <div class="pricing-badge">{{ section.settings.bundle_badge }}</div>
+      <h3>{{ section.settings.bundle_name }}</h3>
+      <p class="pricing-desc">{{ section.settings.bundle_desc }}</p>
+      <div class="pricing-price">
+        <span class="price-current">{{ section.settings.bundle_price }}</span>
+        <span class="price-original">{{ section.settings.bundle_original_price }}</span>
+      </div>
+      <p class="price-per-unit">{{ section.settings.bundle_per_unit }}</p>
+      <p class="price-savings">{{ section.settings.bundle_savings }}</p>
+      <a href="{{ section.settings.bundle_product_url }}" class="btn-primary">{{ section.settings.bundle_cta }}</a>
+    </div>
+  </div>
+  <div class="guarantee-box">
+    <p>{{ section.settings.guarantee_text }}</p>
+  </div>
+  <div class="disclaimer">
+    <p>{{ section.settings.disclaimer }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pricing / Offer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "Choose Your Pack"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Select the Option That Fits Your Goal"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Blood sugar management is a 90-day journey. The 3-bottle bundle gives you the full course — and the best value."
+    },
+    {
+      "type": "url",
+      "id": "single_product_url",
+      "label": "Single Bottle Product URL",
+      "default": "https://vedabox.in/products/diabetic-care-by-veda-box"
+    },
+    {
+      "type": "url",
+      "id": "bundle_product_url",
+      "label": "Bundle Product URL",
+      "default": "https://vedabox.in/products/diabetic-care-by-veda-box"
+    },
+    {
+      "type": "text",
+      "id": "single_name",
+      "label": "Single Bottle Name",
+      "default": "Starter — 1 Bottle"
+    },
+    {
+      "type": "text",
+      "id": "single_desc",
+      "label": "Single Bottle Description",
+      "default": "60 Capsules · 30-Day Supply"
+    },
+    {
+      "type": "text",
+      "id": "single_price",
+      "label": "Single Bottle Price",
+      "default": "₹500"
+    },
+    {
+      "type": "text",
+      "id": "single_original_price",
+      "label": "Single Bottle Original Price",
+      "default": "₹650"
+    },
+    {
+      "type": "text",
+      "id": "single_per_unit",
+      "label": "Single Bottle Per-Unit Text",
+      "default": "₹8.33 per capsule"
+    },
+    {
+      "type": "text",
+      "id": "single_cta",
+      "label": "Single Bottle CTA Text",
+      "default": "Start With 1 Bottle →"
+    },
+    {
+      "type": "text",
+      "id": "bundle_name",
+      "label": "Bundle Name",
+      "default": "Best Value — 3 Bottles"
+    },
+    {
+      "type": "text",
+      "id": "bundle_desc",
+      "label": "Bundle Description",
+      "default": "180 Capsules · 90-Day Supply"
+    },
+    {
+      "type": "text",
+      "id": "bundle_price",
+      "label": "Bundle Price",
+      "default": "₹1,350"
+    },
+    {
+      "type": "text",
+      "id": "bundle_original_price",
+      "label": "Bundle Original Price",
+      "default": "₹1,500"
+    },
+    {
+      "type": "text",
+      "id": "bundle_per_unit",
+      "label": "Bundle Per-Unit Text",
+      "default": "₹7.50 per capsule — save ₹150"
+    },
+    {
+      "type": "text",
+      "id": "bundle_savings",
+      "label": "Bundle Savings Text",
+      "default": "💰 You Save ₹150 vs. Buying Separately"
+    },
+    {
+      "type": "text",
+      "id": "bundle_cta",
+      "label": "Bundle CTA Text",
+      "default": "Get My 3-Bottle Bundle →"
+    },
+    {
+      "type": "text",
+      "id": "bundle_badge",
+      "label": "Bundle Badge Text",
+      "default": "🌟 Most Popular — Best Value"
+    },
+    {
+      "type": "textarea",
+      "id": "guarantee_text",
+      "label": "Guarantee Text",
+      "default": "Try VedaBox Diabetic Care for 30 days. If you're not happy for any reason, email us at info@ashabgroup.in and we'll refund every rupee. Zero risk on your part."
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "These statements have not been evaluated by any regulatory authority. This product is not intended to diagnose, treat, cure, or prevent any disease. VedaBox Diabetic Care is a dietary supplement. Always consult your physician before starting any supplement, especially if you are on medication. Do not discontinue prescribed medication without medical advice."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pricing / Offer"
+    }
+  ]
+}
+{% endschema %}

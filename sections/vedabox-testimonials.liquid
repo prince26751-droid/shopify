@@ -1,0 +1,160 @@
+<section class="testimonials-section">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <p class="section-sub">{{ section.settings.subtitle }}</p>
+  <div class="testimonials-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'testimonial' %}
+        <div class="testimonial-card" {{ block.shopify_attributes }}>
+          <div class="testimonial-stars">
+            {% assign star_count = block.settings.stars %}
+            {% for i in (1..star_count) %}⭐{% endfor %}
+          </div>
+          <p class="testimonial-text">{{ block.settings.text }}</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">{{ block.settings.initials }}</div>
+            <div>
+              <strong>{{ block.settings.name }}</strong>
+              <span class="testimonial-location">{{ block.settings.location }}</span>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "Real Stories"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What Our Customers Are Saying"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "People aged 35 to 65, across India, who chose the natural path."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review Text",
+          "default": "This product has made a real difference in my blood sugar levels."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "Customer Name"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location",
+          "default": "City, State"
+        },
+        {
+          "type": "text",
+          "id": "initials",
+          "label": "Initials (for avatar)",
+          "default": "AB"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "My fasting sugar was 186 mg/dL when I started. After 6 weeks on VedaBox, it's down to 138. I haven't changed my diet much — just added these capsules morning and evening. My doctor was surprised at my last checkup.",
+            "name": "Ramesh S.",
+            "location": "Bangalore, Karnataka",
+            "initials": "RS"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "I was skeptical about Ayurvedic supplements after being disappointed by other products. But VedaBox is different — you can feel the quality. My post-meal spikes have reduced noticeably and I have more energy in the afternoons.",
+            "name": "Sunita P.",
+            "location": "Pune, Maharashtra",
+            "initials": "SP"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "I've been taking metformin for 4 years. Started VedaBox alongside it (with my doctor's knowledge) 3 months ago. My HbA1c dropped from 7.8 to 6.9. My doctor is reviewing whether I still need the full dose of metformin.",
+            "name": "Anil K.",
+            "location": "Delhi, NCR",
+            "initials": "AK"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "My husband bought this for me when I was feeling completely overwhelmed by my diagnosis. The fatigue is so much better — I can get through a full day without needing to rest. My sugar readings are more consistent too.",
+            "name": "Meena R.",
+            "location": "Chennai, Tamil Nadu",
+            "initials": "MR"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "Very good product. I appreciate that it's not just one or two herbs thrown together — you can tell someone thought carefully about the formula. Have ordered my second bottle. Will update after 3 months.",
+            "name": "Vikram T.",
+            "location": "Hyderabad, Telangana",
+            "initials": "VT"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "I bought the 3-bottle bundle for my father who is 63 and has had diabetes for 8 years. He says his cravings for sweets have reduced a lot — which he says is the first time in years. Fasting sugar is trending down slowly but steadily.",
+            "name": "Priya N.",
+            "location": "Jaipur, Rajasthan",
+            "initials": "PN"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

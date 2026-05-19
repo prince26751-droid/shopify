@@ -1,0 +1,65 @@
+<section class="video-section">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <p class="section-sub">{{ section.settings.subtitle }}</p>
+  <div class="video-wrapper">
+    <div class="video-placeholder">
+      <div class="play-btn">▶</div>
+      <div class="video-caption">{{ section.settings.video_caption }}</div>
+    </div>
+  </div>
+  {% if section.settings.show_script_notes and section.settings.script_notes != blank %}
+  <div class="script-notes">
+    <p>{{ section.settings.script_notes }}</p>
+  </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Video Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "Watch This First"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "How 17 Ancient Herbs Are Helping Thousands of Indians Take Back Control of Their Blood Sugar"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Watch the founder explain why he created VedaBox Diabetic Care — and what makes it genuinely different from anything else on the market."
+    },
+    {
+      "type": "text",
+      "id": "video_caption",
+      "label": "Video Caption",
+      "default": "Play Video — The VedaBox Story (3 min)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_script_notes",
+      "label": "Show Script Notes",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "script_notes",
+      "label": "Script Notes / Talking Points",
+      "default": "Key talking points: Founder's personal story with family member's diabetes journey. Why Ayurveda offers a safer long-term path. The 17 herbs and how they work synergistically. What makes VedaBox different from generic supplements. The 30-day guarantee and risk-free promise."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Section"
+    }
+  ]
+}
+{% endschema %}

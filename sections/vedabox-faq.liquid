@@ -1,0 +1,109 @@
+<section class="faq-section">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <div class="faq-list">
+    {% for block in section.blocks %}
+      {% if block.type == 'faq_item' %}
+        <div class="faq-item" {{ block.shopify_attributes }}>
+          <button class="faq-question" aria-expanded="false">
+            {{ block.settings.question }}
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "Common Questions"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Questions We Hear Most Often"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Your question here"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Your answer here."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take VedaBox alongside my current diabetes medication?",
+            "answer": "Yes, in most cases. VedaBox Diabetic Care is a natural supplement and does not interact with most standard diabetes medications. However, we always recommend informing your doctor that you are adding a supplement to your routine. If your blood sugar levels improve significantly, your doctor may want to review your medication dosage."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How quickly will I see results?",
+            "answer": "Most customers report noticing a difference in energy levels and sugar cravings within 2–3 weeks. Measurable changes in fasting glucose and post-meal readings typically become visible after 4–6 weeks of consistent use. For HbA1c improvement, allow 90 days — which is why the 3-bottle bundle is our most recommended option."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are there any side effects?",
+            "answer": "VedaBox Diabetic Care contains 100% plant-based ingredients with no synthetic additives. Side effects are rare. A small number of customers experience mild digestive adjustment during the first week — this typically resolves on its own. If you experience any adverse reaction, discontinue use and consult your physician."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this suitable for Type 1 diabetes?",
+            "answer": "VedaBox Diabetic Care is primarily formulated for Type 2 diabetes and pre-diabetes. People with Type 1 diabetes should consult their endocrinologist before using this or any supplement, as Type 1 management is more complex and insulin-dependent."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 30-day money-back guarantee. If you're not satisfied for any reason within 30 days of receiving your order, email us at info@ashabgroup.in and we'll arrange a full refund — no questions asked. We believe in the product and want you to try it without any risk."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "We ship from Amritsar, Punjab across all of India. Standard delivery takes 5–7 business days. Express delivery options are available at checkout for select pin codes. Free delivery is available on orders above ₹499."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,93 @@
+<section class="ingredients-section">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <p class="section-sub">{{ section.settings.subtitle }}</p>
+  <div class="ingredients-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'herb' %}
+        <div class="herb-card" {{ block.shopify_attributes }}>
+          <div class="herb-icon">{{ block.settings.icon }}</div>
+          <div class="herb-name">{{ block.settings.name }}</div>
+          <div class="herb-benefit">{{ block.settings.benefit }}</div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingredients",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "The Formula"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "17 Ayurvedic Herbs. One Powerful Formula."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Each capsule contains carefully measured extracts of 17 clinically-studied herbs — chosen for their documented effects on blood glucose, insulin sensitivity, and metabolic health."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "herb",
+      "name": "Herb",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "🌿"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Herb Name",
+          "default": "Herb Name"
+        },
+        {
+          "type": "text",
+          "id": "benefit",
+          "label": "Benefit",
+          "default": "Key benefit description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 30,
+  "presets": [
+    {
+      "name": "Ingredients",
+      "blocks": [
+        { "type": "herb", "settings": { "icon": "🌱", "name": "Karela (Bitter Melon)", "benefit": "Mimics insulin action, lowers post-meal glucose spikes" } },
+        { "type": "herb", "settings": { "icon": "🫐", "name": "Jamun Seed", "benefit": "Reduces glycemic index, supports pancreatic function" } },
+        { "type": "herb", "settings": { "icon": "🍃", "name": "Gurmar (Gymnema)", "benefit": "Blocks sugar absorption, reduces sweet cravings" } },
+        { "type": "herb", "settings": { "icon": "🌿", "name": "Methi (Fenugreek)", "benefit": "Improves insulin sensitivity, slows glucose absorption" } },
+        { "type": "herb", "settings": { "icon": "🌾", "name": "Vijaysar", "benefit": "Regenerates beta cells, classically used for diabetes" } },
+        { "type": "herb", "settings": { "icon": "🍂", "name": "Neem Leaf", "benefit": "Anti-inflammatory, supports glucose metabolism" } },
+        { "type": "herb", "settings": { "icon": "🌻", "name": "Turmeric (Curcumin)", "benefit": "Reduces insulin resistance, powerful anti-inflammatory" } },
+        { "type": "herb", "settings": { "icon": "🌰", "name": "Amla (Indian Gooseberry)", "benefit": "Antioxidant powerhouse, supports pancreatic health" } },
+        { "type": "herb", "settings": { "icon": "🍀", "name": "Giloy (Guduchi)", "benefit": "Immune support, reduces oxidative stress in diabetes" } },
+        { "type": "herb", "settings": { "icon": "🌸", "name": "Triphala", "benefit": "Improves digestion and nutrient absorption" } },
+        { "type": "herb", "settings": { "icon": "🪴", "name": "Punarnava", "benefit": "Kidney protective, reduces diabetic edema" } },
+        { "type": "herb", "settings": { "icon": "🌿", "name": "Bhumi Amla", "benefit": "Liver protective, supports detoxification" } },
+        { "type": "herb", "settings": { "icon": "🌱", "name": "Kutki", "benefit": "Liver support, improves fat metabolism" } },
+        { "type": "herb", "settings": { "icon": "🫚", "name": "Shilajit", "benefit": "Enhances cellular energy, reduces fatigue" } },
+        { "type": "herb", "settings": { "icon": "🌿", "name": "Ashwagandha", "benefit": "Reduces cortisol-driven glucose spikes, anti-stress" } },
+        { "type": "herb", "settings": { "icon": "🌾", "name": "Cinnamon (Dalchini)", "benefit": "Improves insulin sensitivity, lowers fasting sugar" } },
+        { "type": "herb", "settings": { "icon": "🫛", "name": "Kali Jeeri", "benefit": "Anti-diabetic, improves glucose tolerance" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

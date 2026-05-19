@@ -1,0 +1,34 @@
+<div class="urgency-banner">
+  {{ section.settings.banner_emoji }} <strong>{{ section.settings.banner_text }}</strong> {{ section.settings.banner_highlight }}
+</div>
+
+{% schema %}
+{
+  "name": "Urgency Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "banner_emoji",
+      "label": "Banner Emoji",
+      "default": "🌿"
+    },
+    {
+      "type": "text",
+      "id": "banner_text",
+      "label": "Banner Text",
+      "default": "Launch Offer Ending Soon:"
+    },
+    {
+      "type": "text",
+      "id": "banner_highlight",
+      "label": "Banner Highlight",
+      "default": "Buy 3 Bottles & Save ₹150 — Only 38 Units Left at This Price"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Urgency Banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,42 @@
+<section class="cta-strip">
+  <h2>{{ section.settings.heading }}</h2>
+  <p>{{ section.settings.subtext }}</p>
+  <a href="{{ section.settings.cta_url }}" class="btn-primary">{{ section.settings.cta_text }}</a>
+</section>
+
+{% schema %}
+{
+  "name": "CTA Strip",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Body Deserves a Natural Solution"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Join 2,000+ Indians who chose ancient wisdom over side effects. Free delivery. 30-day guarantee."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Claim My Bottle Now — ₹500 →"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button URL",
+      "default": "#order"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Strip"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,84 @@
+<section class="how-to-use">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <div class="steps-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'step' %}
+        <div class="step-card" {{ block.shopify_attributes }}>
+          <div class="step-num">{{ forloop.index }}</div>
+          <h3>{{ block.settings.heading }}</h3>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How to Use",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "Simple as 1-2-3"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "No Complicated Routine. Just Take, Eat, Live."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Step Heading",
+          "default": "Step"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Step Description",
+          "default": "Description of this step."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "How to Use",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "heading": "Take 2 Capsules",
+            "description": "Take 2 VedaBox Diabetic Care capsules with warm water — once in the morning before breakfast and once before dinner."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "heading": "Eat Normally",
+            "description": "No need to follow a strict diet. Continue your regular meals. For best results, reduce refined sugars and processed foods where possible."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "heading": "Track Your Progress",
+            "description": "Monitor your fasting and post-meal glucose levels. Most customers notice a difference within 2–4 weeks. Full benefits emerge over a 90-day course."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,98 @@
+<section class="urgency-countdown">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <div class="countdown-box"
+    data-days="{{ section.settings.countdown_days }}"
+    data-hours="{{ section.settings.countdown_hours }}"
+    data-mins="{{ section.settings.countdown_mins }}">
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-days">{{ section.settings.countdown_days }}</span>
+      <span class="countdown-label">Days</span>
+    </div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-hours">{{ section.settings.countdown_hours }}</span>
+      <span class="countdown-label">Hours</span>
+    </div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-mins">{{ section.settings.countdown_mins }}</span>
+      <span class="countdown-label">Minutes</span>
+    </div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-secs">00</span>
+      <span class="countdown-label">Seconds</span>
+    </div>
+  </div>
+  <p>{{ section.settings.body_text }}</p>
+  <p class="urgency-copy">{{ section.settings.urgency_copy }}</p>
+  <a href="{{ section.settings.cta_url }}" class="btn-primary">{{ section.settings.cta_text }}</a>
+</section>
+
+{% schema %}
+{
+  "name": "Urgency Countdown",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "⏰ Limited Time Offer"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Our Launch Offer Ends When Stock Runs Out"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body Text",
+      "default": "We launched VedaBox Diabetic Care with a founding batch of 500 units. Only 38 bottles remain at the launch price. Once this batch sells out, the price increases to ₹650/bottle."
+    },
+    {
+      "type": "text",
+      "id": "urgency_copy",
+      "label": "Urgency Copy",
+      "default": "Order today and lock in the founding price. Buy the 3-bottle bundle and save an additional ₹150."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Lock In My Price Before It's Gone →"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button URL",
+      "default": "#order"
+    },
+    {
+      "type": "number",
+      "id": "countdown_days",
+      "label": "Countdown Days",
+      "default": 2
+    },
+    {
+      "type": "number",
+      "id": "countdown_hours",
+      "label": "Countdown Hours",
+      "default": 14
+    },
+    {
+      "type": "number",
+      "id": "countdown_mins",
+      "label": "Countdown Minutes",
+      "default": 38
+    }
+  ],
+  "presets": [
+    {
+      "name": "Urgency Countdown"
+    }
+  ]
+}
+{% endschema %}

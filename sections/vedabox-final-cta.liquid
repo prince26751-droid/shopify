@@ -1,0 +1,93 @@
+<section class="final-cta">
+  <div class="section-label">{{ section.settings.section_label }}</div>
+  <h2>{{ section.settings.title }}</h2>
+  <div class="final-cta-body">{{ section.settings.body }}</div>
+  <a href="{{ section.settings.cta_url }}" class="btn-primary btn-large">{{ section.settings.cta_text }}</a>
+  <p class="cta-note">{{ section.settings.cta_note }}</p>
+  <div class="trust-bar">
+    <span>{{ section.settings.trust_1 }}</span>
+    <span>{{ section.settings.trust_2 }}</span>
+    <span>{{ section.settings.trust_3 }}</span>
+    <span>{{ section.settings.trust_4 }}</span>
+    <span>{{ section.settings.trust_5 }}</span>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Final CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "The Choice Is Yours"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Keep Managing Symptoms — or Start Supporting the Cause."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body Text",
+      "default": "You can continue doing what you're doing. Or you can try something that works with your body — built on 5,000 years of Ayurvedic wisdom, refined with modern research, and backed by a 30-day money-back guarantee. You have nothing to lose except high blood sugar."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Yes, I Want to Manage My Sugar Naturally →"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button URL",
+      "default": "#order"
+    },
+    {
+      "type": "text",
+      "id": "cta_note",
+      "label": "CTA Note",
+      "default": "Free delivery · 30-Day Guarantee · Only 38 units left at launch price"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust Item 1",
+      "default": "✅ No Harsh Chemicals"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust Item 2",
+      "default": "🌿 100% Ayurvedic"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust Item 3",
+      "default": "🔬 PhD-Formulated"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Trust Item 4",
+      "default": "🛡️ 30-Day Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "trust_5",
+      "label": "Trust Item 5",
+      "default": "🚚 Pan-India Delivery"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Final CTA"
+    }
+  ]
+}
+{% endschema %}
